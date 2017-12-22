@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<title>Klam?</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+    background-image: url("pics/bg.jpg");
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-dark-grey" id="baggrund">
+  <div class="w3-display-middle">
+    
+    <h1 class="w3-jumbo w3-animate-top" id="klam">KLAM ELLER KLAR?</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%;padding-bottom:15px;">
+    <form style="text-align: center; font-size: 20px;  
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 4px;">
+      Din alder<br>
+      <input type="number" id="mig"><br>
+      Din udkårnes alder<br>
+      <input type="number" id="hende"><br><br>
+      <input type="button" value="Er jeg klam?" onclick="undersøg()" id="knap" style="width: 60%;
+    background-color: #616161;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+      
+
+
+    function undersøg() {
+      if (document.getElementById("klam").innerHTML != "KLAM ELLER KLAR?") {location.reload();}
+      else {
+
+      dinAlder = document.getElementById("mig").value;
+      offeretsAlder = document.getElementById("hende").value;
+      if (offeretsAlder >= Math.floor((dinAlder / 2) + 7)) {
+      document.getElementById("klam").innerHTML = "DU ER KLAR!";
+      document.getElementById("knap").value = "Fedt!";
+      document.getElementById("klam").style.color = "#009900";
+      document.getElementById("klam").style.fontSize = "60px";
+      document.getElementById("baggrund").style.backgroundImage = "url('pics/pitbull.PNG')";
+     
+      
+      
+      } else {
+      document.getElementById("klam").innerHTML = "DU ER KLAM!";
+      document.getElementById("knap").value = "Det er forstået...";
+      document.getElementById("klam").style.color = "#ff0000";
+      document.getElementById("klam").style.fontSize = "60px";
+      document.getElementById("baggrund").style.backgroundImage = "url('pics/nomoney.PNG')";
+     
+      }
+
+    }}
+
+
+  </script>
+  
+</div>
+
+</body>
+</html>
